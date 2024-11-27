@@ -7,7 +7,267 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.container{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  padding: 5px;
+  background-color: rgb(96, 53, 96); /* change later*/
+}
+
+.greeting {
+  font-family: 'inter',s'Roboto';
+  font-size: 27px;
+  padding: 5px 60px;
+
+}
+
+
+.date-box{
+  font-family: 'April', sans-serif;
+  font-size: 20px;
+  background-color: rgb(96, 53, 96);
+  padding: 10px 100px;
+  border-radius: 10px;
+  text-align: center;
+  /*color: #555;*/
+}
+
+.date-box h2{
+  color: white;
+}
+
+.quote{
+  font-family: 'April', sans-serif;
+  font-size: 18px; 
+  background-color: rgb(96, 53, 96);
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+/*
+.task-manager{
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  width: 300px;
+}
+
+
+.task-manager h2 {
+  font-family: 'Arial', sans-serif;
+  font-size: 30px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.task-input{
+  display:flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.task-input input{
+  flex: 1;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid blue;
+  border-radius: 5px;
+}
+
+.task-input button {
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #fff;
+  background-color: rgb(96, 53, 96);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.task-input button:hover {
+  background-color: #0056b3;
+
+}
+
+.task-list{
+  list-style: none;
+  padding: 0;
+}
+
+.task-item span {
+  flex: 1;
+  font-size: 14px;
+}
+
+.task-item button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.task-item button:hover{
+  background-color: #a71d2a;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+*/
+
+/* Task List Styling */
+.task-manager{
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  width: 300px;
+}
+
+.task-manager h2 {
+  font-family: 'Arial', sans-serif;
+  font-size: 30px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.task-input{
+  display:flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+
+
+.task-input button {
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #fff;
+  background-color: rgb(96, 53, 96);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.task-input button:hover {
+  background-color: #9632d0;
+
+}
+
+.task-list{
+  list-style: none;
+  padding: none;
+}
+
+.task-item span {
+  flex: 1;
+  font-size: 14px;
+}
+
+.task-item button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.task-item button:hover{
+  background-color: #a71d2a;
+}
+
+
+.task-details {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.importance-circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.importance-circle.green {
+  background-color: green;
+}
+
+.importance-circle.yellow {
+  background-color: yellow;
+}
+
+.importance-circle.red {
+  background-color: red;
+}
+
+/* Modal Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px;
+  max-width: 90%;
+}
+
+.modal h3 {
+  margin-bottom: 15px;
+}
+
+.modal label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.modal input,
+.modal select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-actions button {
+  padding: 10px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-actions button:first-child {
+  background-color: #007bff;
+  color: white;
+}
+
+.modal-actions button:last-child {
+  background-color: #dc3545;
+  color: white;
 }
