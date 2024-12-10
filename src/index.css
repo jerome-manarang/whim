@@ -8,6 +8,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+<<<<<<< Updated upstream
 
 /* Task Manager */
 .task-manager {
@@ -32,6 +33,32 @@ body {
   padding: 3px;
 }
 
+=======
+
+/* Task Manager */
+.task-manager {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  width: 300px;
+}
+
+.container-2 h2 {
+  font-family: 'Arial', sans-serif;
+  font-size: 30px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.container-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px;
+}
+
+>>>>>>> Stashed changes
 .task-input {
   display: flex;
   gap: 10px;
@@ -48,7 +75,85 @@ body {
   cursor: pointer;
 }
 
+<<<<<<< Updated upstream
 .task-manager button:hover {
+=======
+<<<<<<< HEAD
+.task-input button:hover {
+  background-color: #0056b3;
+
+}
+
+.task-list{
+  list-style: none;
+  padding: 0;
+}
+
+.task-item span {
+  flex: 1;
+  font-size: 14px;
+}
+
+.task-item button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.task-item button:hover{
+  background-color: #a71d2a;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+*/
+
+/* Task List Styling */
+.task-manager{
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  width: 300px;
+}
+
+.task-manager h2 {
+  font-family: 'Arial', sans-serif;
+  font-size: 30px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.task-input{
+  display:flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+
+
+.task-input button {
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #fff;
+  background-color: rgb(96, 53, 96);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task-input button:hover {
+=======
+.task-manager button:hover {
+>>>>>>> 5798c402442dcb69d4329b2a1ef7f62a81379544
+>>>>>>> Stashed changes
   background-color: #9632d0;
 }
 
@@ -99,9 +204,10 @@ input[type='checkbox'] {
 
 /* Importance Indicators */
 .importance-circle {
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
+  display: inline-block;
 }
 
 .importance-circle.green {
