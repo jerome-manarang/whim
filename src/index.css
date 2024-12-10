@@ -8,7 +8,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-<<<<<<< Updated upstream
 
 /* Task Manager */
 .task-manager {
@@ -33,7 +32,6 @@ body {
   padding: 3px;
 }
 
-=======
 
 /* Task Manager */
 .task-manager {
@@ -58,7 +56,6 @@ body {
   padding: 3px;
 }
 
->>>>>>> Stashed changes
 .task-input {
   display: flex;
   gap: 10px;
@@ -75,10 +72,6 @@ body {
   cursor: pointer;
 }
 
-<<<<<<< Updated upstream
-.task-manager button:hover {
-=======
-<<<<<<< HEAD
 .task-input button:hover {
   background-color: #0056b3;
 
@@ -149,11 +142,8 @@ code {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.task-input button:hover {
-=======
+
 .task-manager button:hover {
->>>>>>> 5798c402442dcb69d4329b2a1ef7f62a81379544
->>>>>>> Stashed changes
   background-color: #9632d0;
 }
 
@@ -208,6 +198,7 @@ input[type='checkbox'] {
   height: 12px;
   border-radius: 50%;
   display: inline-block;
+  border-color: gray
 }
 
 .importance-circle.green {
@@ -254,12 +245,11 @@ input[type='checkbox'] {
 
 .modal input,
 .modal select {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%; /* Ensure inputs and dropdown are the same width */
+    box-sizing: border-box;
 }
 
 .modal-actions {
@@ -289,8 +279,8 @@ input[type='checkbox'] {
 
 .task-and-calendar {
     display: flex; /* Horizontal layout */
-    gap: 20px; /* Space between Task Manager and Calendar */
-    padding: 20px;
+    gap: 40px; /* Space between Task Manager and Calendar */
+    padding: 40px;
     justify-content: space-between; /* Ensure even spacing */
 
   }
@@ -301,9 +291,9 @@ input[type='checkbox'] {
 .calendar-container {
   flex: 1; /* Allow dynamic width adjustment */
   margin-top: 20px;
-  padding: 20px; /* Increase padding for breathing space */
+  padding: 30px; /* Increase padding for breathing space */
   background-color: #fff; /* Match Task Manager styling */
-  border-radius: 15px; /* Rounded edges */
+  border-radius: 5px; /* Rounded edges */
   
   display: flex; /* Center content inside */
   flex-direction: column;
@@ -314,7 +304,7 @@ input[type='checkbox'] {
 
 .react-calendar {
   width: 100%; /* Let calendar take full width */
-  max-width: 400px; /* Cap width for a clean look */
+  height: 100%; /* Cap width for a clean look */
   border: none; /* Remove default border */
   border-radius: 15px; /* Apply rounded edges to calendar */
   overflow: hidden; /* Clip overflowing content */
