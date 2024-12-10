@@ -32,6 +32,30 @@ body {
   padding: 3px;
 }
 
+
+/* Task Manager */
+.task-manager {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  width: 300px;
+}
+
+.container-2 h2 {
+  font-family: 'Arial', sans-serif;
+  font-size: 30px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.container-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px;
+}
+
 .task-input {
   display: flex;
   gap: 10px;
@@ -47,6 +71,77 @@ body {
   border-radius: 20px;
   cursor: pointer;
 }
+
+.task-input button:hover {
+  background-color: #0056b3;
+
+}
+
+.task-list{
+  list-style: none;
+  padding: 0;
+}
+
+.task-item span {
+  flex: 1;
+  font-size: 14px;
+}
+
+.task-item button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.task-item button:hover{
+  background-color: #a71d2a;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+*/
+
+/* Task List Styling */
+.task-manager{
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  width: 300px;
+}
+
+.task-manager h2 {
+  font-family: 'Arial', sans-serif;
+  font-size: 30px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.task-input{
+  display:flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+
+
+.task-input button {
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #fff;
+  background-color: rgb(96, 53, 96);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 
 .task-manager button:hover {
   background-color: #9632d0;
@@ -99,9 +194,11 @@ input[type='checkbox'] {
 
 /* Importance Indicators */
 .importance-circle {
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
+  display: inline-block;
+  border-color: gray
 }
 
 .importance-circle.green {
@@ -148,12 +245,11 @@ input[type='checkbox'] {
 
 .modal input,
 .modal select {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%; /* Ensure inputs and dropdown are the same width */
+    box-sizing: border-box;
 }
 
 .modal-actions {
@@ -183,8 +279,8 @@ input[type='checkbox'] {
 
 .task-and-calendar {
     display: flex; /* Horizontal layout */
-    gap: 20px; /* Space between Task Manager and Calendar */
-    padding: 20px;
+    gap: 40px; /* Space between Task Manager and Calendar */
+    padding: 40px;
     justify-content: space-between; /* Ensure even spacing */
 
   }
@@ -195,9 +291,9 @@ input[type='checkbox'] {
 .calendar-container {
   flex: 1; /* Allow dynamic width adjustment */
   margin-top: 20px;
-  padding: 20px; /* Increase padding for breathing space */
+  padding: 30px; /* Increase padding for breathing space */
   background-color: #fff; /* Match Task Manager styling */
-  border-radius: 15px; /* Rounded edges */
+  border-radius: 5px; /* Rounded edges */
   
   display: flex; /* Center content inside */
   flex-direction: column;
@@ -208,7 +304,7 @@ input[type='checkbox'] {
 
 .react-calendar {
   width: 100%; /* Let calendar take full width */
-  max-width: 400px; /* Cap width for a clean look */
+  height: 100%; /* Cap width for a clean look */
   border: none; /* Remove default border */
   border-radius: 15px; /* Apply rounded edges to calendar */
   overflow: hidden; /* Clip overflowing content */
