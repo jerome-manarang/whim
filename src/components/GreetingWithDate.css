@@ -1,0 +1,37 @@
+/* Greeting and Date Box */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: rgb(96, 53, 96); /* change later */
+  }
+  
+  .greeting {
+    font-family: 'Arial', sans-serif;
+    font-size: 27px;
+    padding: 5px 60px;
+  }
+  
+  .date-box {
+    font-family: 'April', sans-serif;
+    font-size: 20px;
+    background-color: rgb(96, 53, 96);
+    padding: 10px 100px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .date-box h2 {
+    color: white;
+  }
+  
+  .quote {
+    font-family: 'April', sans-serif;
+    font-size: 18px;
+    background-color: rgb(96, 53, 96);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  

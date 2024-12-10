@@ -1,3 +1,4 @@
+/* Global Styles */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,76 +8,37 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.container{
+
+/* Task Manager */
+.task-manager {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  width: 300px;
+}
+
+.container-2 h2 {
+  font-family: 'Arial', sans-serif;
+  font-size: 30px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.container-2 {
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: center;
-  padding: 5px;
-  background-color: rgb(96, 53, 96); /* change later*/
+  padding: 3px;
 }
 
-.greeting {
-  font-family: 'inter',s'Roboto';
-  font-size: 27px;
-  padding: 5px 60px;
-
-}
-
-
-.date-box{
-  font-family: 'April', sans-serif;
-  font-size: 20px;
-  background-color: rgb(96, 53, 96);
-  padding: 10px 100px;
-  border-radius: 10px;
-  text-align: center;
-  /*color: #555;*/
-}
-
-.date-box h2{
-  color: white;
-}
-
-.quote{
-  font-family: 'April', sans-serif;
-  font-size: 18px; 
-  background-color: rgb(96, 53, 96);
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-align: center;
-}
-/*
-.task-manager{
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #fff;
-  border-radius: 5px;
-  width: 300px;
-}
-
-
-.task-manager h2 {
-  font-family: 'Arial', sans-serif;
-  font-size: 30px;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.task-input{
-  display:flex;
+.task-input {
+  display: flex;
   gap: 10px;
   margin-bottom: 20px;
 }
 
-.task-input input{
-  flex: 1;
-  padding: 10px;
-  font-size: 14px;
-  border: 1px solid blue;
-  border-radius: 5px;
-}
-
-.task-input button {
+.task-manager button {
   padding: 10px 20px;
   font-size: 14px;
   color: #fff;
@@ -86,85 +48,22 @@ body {
   cursor: pointer;
 }
 
-.task-input button:hover {
-  background-color: #0056b3;
-
-}
-
-.task-list{
-  list-style: none;
-  padding: 0;
-}
-
-.task-item span {
-  flex: 1;
-  font-size: 14px;
-}
-
-.task-item button {
-  background-color: #dc3545;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-
-.task-item button:hover{
-  background-color: #a71d2a;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-*/
-
-/* Task List Styling */
-.task-manager{
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #fff;
-  border-radius: 5px;
-  width: 300px;
-}
-
-.task-manager h2 {
-  font-family: 'Arial', sans-serif;
-  font-size: 30px;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.task-input{
-  display:flex;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-
-
-.task-input button {
-  padding: 10px 20px;
-  font-size: 14px;
-  color: #fff;
-  background-color: rgb(96, 53, 96);
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-}
-
-.task-input button:hover {
+.task-manager button:hover {
   background-color: #9632d0;
-
 }
 
-.task-list{
+.task-list {
   list-style: none;
   padding: none;
 }
 
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3px;
+}
+
 .task-item span {
   flex: 1;
   font-size: 14px;
@@ -179,11 +78,9 @@ code {
   cursor: pointer;
 }
 
-
-.task-item button:hover{
+.task-item button:hover {
   background-color: #a71d2a;
 }
-
 
 .task-details {
   display: flex;
@@ -191,6 +88,16 @@ code {
   gap: 10px;
 }
 
+.task-item.completed span {
+  text-decoration: line-through; /* SpongeBob-approved strikethrough! */
+  color: gray;
+}
+
+input[type='checkbox'] {
+  margin-right: 10px; /* Keep it tidy! */
+}
+
+/* Importance Indicators */
 .importance-circle {
   width: 10px;
   height: 10px;
@@ -270,4 +177,90 @@ code {
 .modal-actions button:last-child {
   background-color: #dc3545;
   color: white;
+}
+
+/* Task Manager and Calendar Layout */
+
+.task-and-calendar {
+    display: flex; /* Horizontal layout */
+    gap: 20px; /* Space between Task Manager and Calendar */
+    padding: 20px;
+    justify-content: space-between; /* Ensure even spacing */
+
+  }
+  
+
+
+/* Calendar Container */
+.calendar-container {
+  flex: 1; /* Allow dynamic width adjustment */
+  margin-top: 20px;
+  padding: 20px; /* Increase padding for breathing space */
+  background-color: #fff; /* Match Task Manager styling */
+  border-radius: 15px; /* Rounded edges */
+  
+  display: flex; /* Center content inside */
+  flex-direction: column;
+  align-items: center; /* Horizontal centering */
+   /* Subtle shadow for depth */
+}
+
+
+.react-calendar {
+  width: 100%; /* Let calendar take full width */
+  max-width: 400px; /* Cap width for a clean look */
+  border: none; /* Remove default border */
+  border-radius: 15px; /* Apply rounded edges to calendar */
+  overflow: hidden; /* Clip overflowing content */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.react-calendar__tile {
+  padding: 10px; /* Increase padding for clickability */
+  text-align: center;
+}
+
+.react-calendar__tile:hover {
+  background-color: rgb(96, 53, 96); /* Highlight tile on hover */
+  color: white; /* Ensure text is readable */
+  border-radius: 50%; /* Circular hover effect */
+}
+
+.react-calendar__tile--active {
+  background-color: rgb(96, 53, 96); /* Active tile color */
+  color: white;
+  border-radius: 50%;
+}
+
+.react-calendar__tile--now {
+  background-color: #f0f0f0; /* Today's date */
+  font-weight: bold;
+  border-radius: 50%;
+}
+
+
+.tasks-for-date {
+  margin-top: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.tasks-for-date h3 {
+  font-size: 18px;
+  color: #333;
+}
+
+.tasks-for-date ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.tasks-for-date li {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.tasks-for-date li .importance-circle {
+  margin-right: 10px;
 }

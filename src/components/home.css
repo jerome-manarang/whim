@@ -1,0 +1,128 @@
+/* Home Page Styling */
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(96, 53, 96);
+    margin: 0;
+    font-family: Arial, sans-serif;
+    position: relative;
+  }
+  
+  .animated-title {
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+    position: relative;
+    opacity: 0;
+    animation: fadeInSlideDown 2s ease-out forwards;
+  }
+  
+  .animated-title h1 {
+    font-size: 70px;
+  }
+  
+  @keyframes fadeInSlideDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Cloud Styling */
+  .cloud {
+    position: absolute;
+    bottom: 50px;
+    width: 200px;
+    height: 120px;
+    /* Path to cloud image in the public folder */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    animation: float 5s ease-in-out infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-weight: bold;
+  }
+  
+  .cloud-left {
+    left: 50px;
+    animation-direction: alternate;
+  }
+  
+  .cloud-right {
+    right: 50px;
+    animation-direction: alternate-reverse;
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  /* Modal Styling */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 90%;
+  }
+  
+  .modal h3 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .modal form input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .modal form button {
+    padding: 10px;
+    background-color: rgb(96, 53, 96);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .modal form button:hover {
+    background-color: #7c4d7c;
+  }
+  
