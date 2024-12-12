@@ -49,7 +49,7 @@ export default function GreetingWithDate() {
     fetchWeather();
   }, []);
 
-  return ( // Display for the website
+  return ( // Display for the
     <div className="container">
       <div className="greeting">
         <h1>Welcome back, User!</h1>
