@@ -12,17 +12,17 @@ export default function TaskManager() {
   const [taskDate, setTaskDate] = useState(new Date()); // Task date selected in the modal
   const [selectedDate, setSelectedDate] = useState(new Date()); // Currently selected date in the calendar
   const [showModal, setShowModal] = useState(false); // Modal visibility
+  const [token, setToken] = useState(localStorage.getItem("token") || ""); // User token
 
   // Fetch tasks from backend on component mount
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const token = localStorage.getItem("token");
         const response = await fetch("http://localhost:5001/tasks", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
-            token, // Pass token in headers
+            token, // Include token in headers
           },
         });
 
@@ -37,8 +37,10 @@ export default function TaskManager() {
       }
     };
 
-    fetchTasks();
-  }, []);
+    if (token) {
+      fetchTasks(); // Only fetch tasks if token is available
+    }
+  }, [token]);
 
   // Add a new task
   const addTask = async () => {
@@ -48,17 +50,16 @@ export default function TaskManager() {
     }
 
     try {
-      const token = localStorage.getItem("token");
       const response = await fetch("http://localhost:5001/tasks", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          token, // Pass token in headers
+          token, // Include token in headers
         },
         body: JSON.stringify({
           task: taskInput,
           importance,
-          date: taskDate.toISOString().split("T")[0],
+          date: taskDate.toISOString().split("T")[0], // Format to YYYY-MM-DD
         }),
       });
 
@@ -77,6 +78,20 @@ export default function TaskManager() {
     }
   };
 
+  // Delete a task (frontend-only)
+  const deleteTask = (id) => {
+    setTasks(tasks.filter((task) => task.id !== id));
+  };
+
+  // Update "done" status of a task (frontend-only)
+  const toggleTaskDone = (id) => {
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.id === id ? { ...task, done: !task.done } : task
+      )
+    );
+  };
+
   // Filter tasks for the currently selected date in the calendar
   const tasksForSelectedDate = tasks.filter(
     (task) => task.date === selectedDate.toISOString().split("T")[0]
@@ -89,15 +104,23 @@ export default function TaskManager() {
         <h2>Tasks for {selectedDate.toDateString()}</h2>
         <ul className="task-list">
           {tasksForSelectedDate.length > 0 ? (
-            tasksForSelectedDate.map((task, index) => (
-              <li key={index} className="task-item">
+            tasksForSelectedDate.map((task) => (
+              <li key={task.id} className={`task-item ${task.done ? "done" : ""}`}>
                 <div className="task-details">
                   <span
                     className={`importance-circle ${task.importance}`}
                     title={`Importance: ${task.importance}`}
                   ></span>
-                  <span>{task.task}</span>
+                  <span
+                    style={{ textDecoration: task.done ? "line-through" : "none" }} // Toggle line-through for done tasks
+                  >
+                    {task.task}
+                  </span>
                 </div>
+                <button onClick={() => toggleTaskDone(task.id)}>
+                  {task.done ? "Undo" : "Done"}
+                </button>
+                <button onClick={() => deleteTask(task.id)}>Delete</button>
               </li>
             ))
           ) : (

@@ -60,7 +60,7 @@ function Home() {
   const handleLogin = async (e) => {
     e.preventDefault();
     console.log("Login form submitted");
-
+  
     try {
       const response = await fetch("http://localhost:5001/login", {
         method: "POST",
@@ -72,13 +72,13 @@ function Home() {
           password: loginPassword,
         }),
       });
-
+  
       if (response.ok) {
-        const data = await response.json(); // Assuming the server sends a JWT token
+        const data = await response.json();
         console.log("Login successful, token:", data.token);
-        localStorage.setItem("token", data.token); // Save the token for session management
+        localStorage.setItem("token", data.token); // Save token in localStorage
         setLoginMessage("Login successful!");
-        setLoginModalOpen(false); // Close modal on success
+        setLoginModalOpen(false); // Close modal
         navigate("/tasks"); // Redirect to /tasks
       } else {
         const errorMessage = await response.text();
@@ -90,6 +90,7 @@ function Home() {
       setLoginMessage("An error occurred during login.");
     }
   };
+  
 
   return (
     <div className="home">
@@ -108,6 +109,7 @@ function Home() {
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
+          
         }}
       >
         <h2>Sign Up</h2>

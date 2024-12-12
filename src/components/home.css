@@ -42,6 +42,7 @@
     height: 120px;
     /* Path to cloud image in the public folder */
     background-size: cover;
+    background-color: rgb(96, 53, 96);
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
@@ -56,11 +57,13 @@
   .cloud-left {
     left: 50px;
     animation-direction: alternate;
+    background-color: rgb(96, 53, 96);
   }
   
   .cloud-right {
     right: 50px;
     animation-direction: alternate-reverse;
+    background-color: rgb(96, 53, 96);
   }
   
   @keyframes float {
@@ -125,4 +128,3 @@
   .modal form button:hover {
     background-color: #7c4d7c;
   }
-  
